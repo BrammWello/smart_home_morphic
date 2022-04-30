@@ -42,21 +42,21 @@ class _SittingRoomState extends State<SittingRoom> {
                   //       ),
                   //     ),
                   //     Spacer(),
-                  //     NeumorphicButton(
-                  //       onPressed: () {
-                  //         print("onClick");
-                  //       },
-                  //       style: NeumorphicStyle(
-                  //         color: kBackgroundColor,
-                  //         shape: NeumorphicShape.flat,
-                  //         boxShape: NeumorphicBoxShape.circle(),
-                  //       ),
-                  //       padding: const EdgeInsets.all(12.0),
-                  //       child: Icon(
-                  //         Icons.lock_open,
-                  //         color: kTextColor,
-                  //       ),
-                  //     ),
+                  // NeumorphicButton(
+                  //   onPressed: () {
+                  //     print("onClick");
+                  //   },
+                  //   style: NeumorphicStyle(
+                  //     color: kBackgroundColor,
+                  //     shape: NeumorphicShape.flat,
+                  //     boxShape: NeumorphicBoxShape.circle(),
+                  //   ),
+                  //   padding: const EdgeInsets.all(12.0),
+                  //   child: Icon(
+                  //     Icons.lock_open,
+                  //     color: kTextColor,
+                  //   ),
+                  // ),
                   //   ],
                   // ),
                   Row(
@@ -113,35 +113,48 @@ class _SittingRoomState extends State<SittingRoom> {
                               MaterialPageRoute(
                                   builder: (context) => SittingRoom()));
                         },
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Neumorphic(
-                            style: NeumorphicStyle(
-                                shape: NeumorphicShape.flat,
-                                boxShape: NeumorphicBoxShape.roundRect(
-                                    BorderRadius.circular(5)),
-                                depth: 8,
-                                color: kBackgroundColor),
-                            child: Container(
-                              height: size.height * .2,
-                              width: size.height * .9,
-                              child: Row(
-                                children: [
-                                  Expanded(
-                                    child: Container(
-                                      transform: Matrix4.translationValues(
-                                          -30.0, 0.0, 0.0),
-                                      child: Image(
-                                        image: AssetImage(
-                                            'assets/images/tcl_tv.png'),
+                        child: Neumorphic(
+                          style: NeumorphicStyle(
+                            shape: NeumorphicShape.flat,
+                            boxShape: NeumorphicBoxShape.roundRect(
+                                BorderRadius.circular(5)),
+                            depth: 8,
+                            color: kBackgroundColor,
+                          ),
+                          child: Container(
+                            width: size.height * .9,
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: Column(
+                                    children: [
+                                      SizedBox(
+                                        height: 10,
                                       ),
-                                    ),
+                                      Container(
+                                        transform: Matrix4.translationValues(
+                                            -30.0, 0.0, 0.0),
+                                        child: Image(
+                                          image: AssetImage(
+                                              'assets/images/tcl_tv.png'),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                    ],
                                   ),
-                                  Expanded(
+                                ),
+                                Expanded(
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(right: 10.0),
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
+                                        SizedBox(
+                                          height: 20,
+                                        ),
                                         Text(
                                           "Living Room TV",
                                           style: TextStyle(
@@ -149,11 +162,68 @@ class _SittingRoomState extends State<SittingRoom> {
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
+                                        SizedBox(
+                                          height: 7,
+                                        ),
+                                        Text(
+                                          "Currently Playing: Macarena",
+                                          style: TextStyle(
+                                            fontSize: kDefaultPadding * .7,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          height: 7,
+                                        ),
+                                        Text(
+                                          "100% Volume",
+                                          style: TextStyle(
+                                            fontSize: kDefaultPadding * .7,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          height: 20,
+                                        ),
+                                        Neumorphic(
+                                          style: NeumorphicStyle(
+                                            shape: NeumorphicShape.flat,
+                                            boxShape:
+                                                NeumorphicBoxShape.roundRect(
+                                                    BorderRadius.circular(5)),
+                                            depth: 8,
+                                            color: kBackgroundColor,
+                                          ),
+                                          child: Row(
+                                            children: [
+                                              NeumorphicButton(
+                                                onPressed: () {
+                                                  print("onClick");
+                                                },
+                                                style: NeumorphicStyle(
+                                                  color: kBackgroundColor,
+                                                  shape: NeumorphicShape.flat,
+                                                  boxShape: NeumorphicBoxShape
+                                                      .roundRect(
+                                                    BorderRadius.circular(12),
+                                                  ),
+                                                ),
+                                                padding:
+                                                    const EdgeInsets.all(12.0),
+                                                child: Icon(
+                                                  Icons.lock_open,
+                                                  color: kTextColor,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          height: 20,
+                                        ),
                                       ],
                                     ),
-                                  )
-                                ],
-                              ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ),
